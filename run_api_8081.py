@@ -10,6 +10,10 @@ import sys
 import uvicorn
 
 from deploy_api import app
+from cloud_api import router as cloud_router
+
+# 挂载云托管 callContainer JSON 兼容端点（/api/idphoto、/api/add_background）
+app.include_router(cloud_router)
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.environ.get("PORT", "8081"))
