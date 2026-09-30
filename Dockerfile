@@ -1,9 +1,9 @@
-FROM python:3.10-slim
+FROM python:3.10-slim-bookworm
 
-# 系统依赖：OpenCV/FFmpeg 运行所需
+# 系统依赖：OpenCV/FFmpeg 运行所需（锁 Debian 12；libgl1 替代 trixie 中已移除的 libgl1-mesa-glx）
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     curl \
     ca-certificates \
