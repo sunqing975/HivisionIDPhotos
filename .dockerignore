@@ -1,0 +1,8 @@
+.venv/
+.git/
+assets/
+test/
+__pycache__/
+*.pyc
+.DS_Store
+demo/kb_output/
